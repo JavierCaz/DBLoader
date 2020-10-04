@@ -3,15 +3,22 @@
 include('datosConexion.php');
 
 class Conexion {
-    function Conectar(){
+    function Conectar($bd){
         try{
-            //$conexion = new PDO("mysql:host=".SERVER.";dbname=".DBNAME, USER, PASS);
-            $conexion = new PDO("sqlsrv:Server=".SERVER.";Database=".DBNAME, USER, PASS);
-            //$conexion = new PDO("pgsql:host=".SERVER.";port=5432;dbname=".DBNAME, USER, PASS);
+            switch ($bd) {
+                case 1:
+                    $conexion = new PDO("mysql:host=".mysqlSERVER.";dbname=".mysqlDBNAME, mysqlUSER, mysqlPASS);
+                    break;
+                case 2:
+                    $conexion = new PDO("sqlsrv:Server=".sqlsrvSERVER.";Database=".sqlsrvDBNAME, sqlsrvUSER, sqlsrvPASS);
+                    break;
+                case 3:
+                    $conexion = new PDO("pgsql:host=".pgsqlSERVER.";port=5432;dbname=".pgsqlDBNAME, pgsqlUSER, pgsqlPASS);
+                    break;
+            }
             return $conexion;     
         }catch (Exception $error){
             die("El error de conexion es: ".$error->getMessage());
         }
-        
     }
 }

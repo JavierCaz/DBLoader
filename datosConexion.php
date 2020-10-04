@@ -1,19 +1,19 @@
 <?php
 
 //mysql
-//define('SERVER', 'localhost');
-//define('DBNAME', 'address');
-//define('USER', 'root');
-//define('PASS', '');
+define('mysqlSERVER', 'localhost');
+define('mysqlDBNAME', 'address');
+define('mysqlUSER', 'root');
+define('mysqlPASS', '');
 
 //postgres
-//define('SERVER', 'localhost');
-//define('DBNAME', 'dvdrental');
-//define('USER', 'postgres');
-//define('PASS', 'root');
+define('pgsqlSERVER', 'localhost');
+define('pgsqlDBNAME', 'dvdrental');
+define('pgsqlUSER', 'postgres');
+define('pgsqlPASS', 'root');
 
-//postgres
-define('SERVER', 'localhost');
-define('DBNAME', 'AdventureWorks2017');
-define('USER', '');
-define('PASS', '');
+//sqlserver
+define('sqlsrvSERVER', 'localhost');
+define('sqlsrvDBNAME', 'AdventureWorks2017');
+define('sqlsrvUSER', '');
+define('sqlsrvPASS', '');
